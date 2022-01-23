@@ -27,11 +27,11 @@
                             <div class="card h-100 border-0">
                                 <!-- Bootstap Card Documentation https://getbootstrap.com/docs/4.0/components/card/ -->
                                 {% if product.image %}
-                                    <a href="">
+                                    <a href="{% url 'product_detail' product.id%}">
                                         <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
                                     </a>
                                 {% else %}
-                                    <a href="">
+                                    <a href="{% url 'product_detail' product.id%}">
                                         <!-- Add no image here -->
                                         <img class="card-img-top img-fluid" src="" alt="{{ product.name }}"> 
                                     </a>
