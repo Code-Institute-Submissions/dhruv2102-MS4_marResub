@@ -4,20 +4,20 @@ from .models import Category, Product
 
 class ProductAdmin(admin.ModelAdmin):
     list_display = (
-        'name',
-        'category',
-        'price',
-        'rating',
-        'image',
+        "name",
+        "category",
+        "price",
+        "rating",
+        "image",
     )
 
-    ordering = ('name',)
+    ordering = ("name",)
 
 
 class CategoryAdmin(admin.ModelAdmin):
     list_display = (
-        'friendly_name',
-        'name',
+        "friendly_name",
+        "name",
     )
 
 
