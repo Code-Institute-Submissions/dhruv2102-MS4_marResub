@@ -12,6 +12,11 @@ def checkout(request):
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
 
+    if not stripe_public_key:
+        messages.error(request, 'Stripe public key is missing.')
+        return redirect(reverse('view_bag'))
+
+
     bag = request.session.get("bag", {})
     if not bag:
         messages.error(request, "There's nothing in your bag at the moment")
