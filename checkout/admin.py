@@ -15,6 +15,8 @@ class OrderAdmin(admin.ModelAdmin):
         "date",
         "order_total",
         "grand_total",
+        "original_bag",
+        "stripe_pid",
     )
 
     fields = (
@@ -25,6 +27,8 @@ class OrderAdmin(admin.ModelAdmin):
         "phone_number",
         "order_total",
         "grand_total",
+        "original_bag",
+        "stripe_pid"
     )
 
     list_display = (
