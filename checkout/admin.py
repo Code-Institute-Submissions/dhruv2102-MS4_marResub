@@ -28,7 +28,7 @@ class OrderAdmin(admin.ModelAdmin):
         "order_total",
         "grand_total",
         "original_bag",
-        "stripe_pid"
+        "stripe_pid",
     )
 
     list_display = (

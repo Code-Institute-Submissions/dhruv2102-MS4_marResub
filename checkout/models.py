@@ -3,6 +3,7 @@ import uuid
 from django.db import models
 from django.db.models import Sum
 from products.models import Product
+from profiles.models import UserProfile
 
 
 class Order(models.Model):
@@ -18,8 +19,15 @@ class Order(models.Model):
     grand_total = models.DecimalField(
         max_digits=10, decimal_places=2, null=False, default=0
     )
-    original_bag = models.TextField(null=False, blank=False, default='')
-    stripe_pid = models.CharField(max_length=254, null=False, blank=False, default='')
+    original_bag = models.TextField(null=False, blank=False, default="")
+    stripe_pid = models.CharField(max_length=254, null=False, blank=False, default="")
+    user_profile = models.ForeignKey(
+        UserProfile,
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        related_name="orders",
+    )
 
     def _generate_order_number(self):
         return uuid.uuid4().hex.upper()

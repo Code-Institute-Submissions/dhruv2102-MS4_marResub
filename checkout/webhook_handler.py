@@ -5,15 +5,13 @@ from products.models import Product
 import json
 import time
 
+
 class StripeWH_Handler:
     def __init__(self, request):
         self.request = request
-    
+
     def handle_event(self, event):
-        return HttpResponse(
-            content=f'Webhoo received: {event["type"]}',
-            status=200
-        )
+        return HttpResponse(content=f'Webhoo received: {event["type"]}', status=200)
 
     def handle_payment_intent_succeeded(self, event):
         intent = event.data.object
@@ -22,7 +20,7 @@ class StripeWH_Handler:
         save_info = intent.metadata.save_info
 
         billing_details = intent.charges.data[0].billing_details
-        grand_total = round(intent.charges.data[0].amount/100,2)
+        grand_total = round(intent.charges.data[0].amount / 100, 2)
 
         order_exists = False
         attempt = 1
@@ -44,7 +42,8 @@ class StripeWH_Handler:
         if order_exists:
             return HttpResponse(
                 content=f'Webhook received: {event["type"]} | SUCCESS: Verified order already in database',
-                status=200)
+                status=200,
+            )
         else:
             order = None
             try:
@@ -68,14 +67,9 @@ class StripeWH_Handler:
                     order.delete()
                 return HttpResponse(
                     content=f'Webhook received: {event["type"]} | ERROR: {e}',
-                    status=500)
-        return HttpResponse(
-            content=f'Webhook received: {event["type"]}',
-            status=200
-        )
-    
+                    status=500,
+                )
+        return HttpResponse(content=f'Webhook received: {event["type"]}', status=200)
+
     def handle_payment_intent_failed(self, event):
-        return HttpResponse(
-            content=f'Webhook received: {event["type"]}',
-            status=200
-        )
+        return HttpResponse(content=f'Webhook received: {event["type"]}', status=200)
