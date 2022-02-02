@@ -106,7 +106,8 @@ def checkout(request):
 
         if request.user.is_authenticated:
             try:
-                profile = UserProfile(initial = {
+                profile = UserProfile.objects.get(user=request.user)
+                order_form = OrderForm({
                     'full_name': profile.user.get_full_name(),
                     'email': profile.user.email,
                     'phone_number': profile.default_phone_number,
@@ -114,7 +115,6 @@ def checkout(request):
             except:
                 order_form = OrderForm()
         else:
-
             order_form = OrderForm()
 
     template = "checkout/checkout.html"
