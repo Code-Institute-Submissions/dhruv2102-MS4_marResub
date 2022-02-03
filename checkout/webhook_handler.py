@@ -17,21 +17,16 @@ class StripeWH_Handler:
     def _send_confirmation_email(self_order):
         cust_email = order.email
         subject = render_to_string(
-            'checkout/confirmation_email/confirmation_email_subject.txt',
-            { 'order': order }
+            "checkout/confirmation_email/confirmation_email_subject.txt",
+            {"order": order},
         )
 
         body = render_to_string(
-            'checkout/confirmation_email/confirmation_email_body.txt',
-            { 'order': order, 'contact_email': settings.DEFAULT_FROM_EMAIL}
+            "checkout/confirmation_email/confirmation_email_body.txt",
+            {"order": order, "contact_email": settings.DEFAULT_FROM_EMAIL},
         )
 
-        send_mail(
-            subject,
-            body,
-            settings.DEFAULT_FROM_EMAIL,
-            [cust_email]
-        )
+        send_mail(subject, body, settings.DEFAULT_FROM_EMAIL, [cust_email])
 
     def handle_event(self, event):
         return HttpResponse(content=f'Webhoo received: {event["type"]}', status=200)
@@ -45,16 +40,13 @@ class StripeWH_Handler:
         billing_details = intent.charges.data[0].billing_details
         grand_total = round(intent.charges.data[0].amount / 100, 2)
 
-
         profile = None
         username = intent.metadata.username
-        if username != 'AnonymousUser':
+        if username != "AnonymousUser":
             profile = UserProfile.objects.get(user__username=username)
             if save_info:
                 profile.default_phone_number = billing_details.phone_number
                 profile.save()
-
-
 
         order_exists = False
         attempt = 1
@@ -106,7 +98,7 @@ class StripeWH_Handler:
                     status=500,
                 )
         self._send_confirmation_email(order)
-        
+
         return HttpResponse(content=f'Webhook received: {event["type"]}', status=200)
 
     def handle_payment_intent_failed(self, event):

@@ -107,11 +107,13 @@ def checkout(request):
         if request.user.is_authenticated:
             try:
                 profile = UserProfile.objects.get(user=request.user)
-                order_form = OrderForm({
-                    'full_name': profile.user.get_full_name(),
-                    'email': profile.user.email,
-                    'phone_number': profile.default_phone_number,
-                })
+                order_form = OrderForm(
+                    {
+                        "full_name": profile.user.get_full_name(),
+                        "email": profile.user.email,
+                        "phone_number": profile.default_phone_number,
+                    }
+                )
             except:
                 order_form = OrderForm()
         else:
@@ -139,7 +141,7 @@ def checkout_success(request, order_number):
         # Save the user's info
         if save_info:
             profile_data = {
-                'default_phone_number': order.phone_number,
+                "default_phone_number": order.phone_number,
             }
             user_profile_form = UserProfileForm(profile_data, instance=profile)
             if user_profile_form.is_valid():
