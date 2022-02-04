@@ -6,36 +6,29 @@
             </a>
         </li>
         <li class="nav-item">
-            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#">
+            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="{% url 'about' %}">
                 About
             </a>
         </li>
 
         <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="train" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="{% url 'products' %}">
                 Train
             </a>
-            <div class="dropdown-menu border-0" aria-labelledby="train">
-                <a href="{% url 'products' %}" class="dropdown-item">All Products</a>
-            </div>
         </li>
 
         <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="shop" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="shop" >
                 Shop
             </a>
-            <div class="dropdown-menu border-0" aria-labelledby="shop">
-                
-            </div>
+
         </li>
 
         <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-black" href="#" id="contact" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="logo-font font-weight-bold nav-link text-black" href="#" id="contact">
                 Contact 
             </a>
-            <div class="dropdown-menu border-0" aria-labelledby="contact">
-                
-            </div>
+
         </li>
     </ul>
 </div>
