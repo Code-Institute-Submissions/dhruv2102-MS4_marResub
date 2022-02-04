@@ -236,6 +236,12 @@ input[name='q']::placeholder {
 }
 
 
+/* About Page */
+.about-header {
+    color: #000;
+    text-transform: uppercase;
+
+}
 
 /* Media Queries */
 
