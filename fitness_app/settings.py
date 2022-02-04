@@ -29,7 +29,7 @@ DEBUG = 'DEVELOPEMENT' in os.environ
 # DEBUG = True
 
 ALLOWED_HOSTS = ['localhost', 'ms4-fitness-app.herokuapp.com']
-
+# ALLOWED_HOSTS = []
 
 # Application definition
 
@@ -208,5 +208,5 @@ if 'USE_AWS' in os.environ:
     DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
     MEDIAFILES_LOCATION = 'MEDIA'
 
-    STATIC_URL = f"https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}"
-    MEDIA_URL = f"https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}"
+    STATIC_URL = f"https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/"
+    MEDIA_URL = f"https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/"
