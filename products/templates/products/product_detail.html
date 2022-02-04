@@ -15,13 +15,13 @@
         <div class="row">
             <div class="col-12 col-md-6 col-lg-4 offset-lg-2">
                 {% if product.image %}
-                    <a href="{{ product.image.url}}" target="_blank">
+                    <a href="{{ product.image.url }}" target="_blank">
                         <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
                     </a>
                 {% else %}
-                    <a href="">
+                    <a href="{{ MEDIA_URL }}noimage.png">
                         <!-- Add no image here -->
-                        <img class="card-img-top img-fluid" src="" alt="{{ product.name }}"> 
+                        <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}"> 
                     </a>
                 {% endif %}
             </div>

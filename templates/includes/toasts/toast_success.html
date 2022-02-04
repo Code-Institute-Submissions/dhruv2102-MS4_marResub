@@ -21,9 +21,9 @@
                     <div class="row">
                         <div class="col-3 my-1">
                             {% if item.product.image %}
-                                <img class="w-100" src="">
+                                <img class="w-100" src="{{ item.product.image.url }}">
                             {% else %}
-                                <!-- Add no media here -->
+                                <img class="w-100" src="{{ MEDIA_URL }}noimage.png">
                             {% endif %}
                         </div>
                         <div class="col-9">
