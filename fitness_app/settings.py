@@ -28,7 +28,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY", "")
 DEBUG = 'DEVELOPEMENT' in os.environ
 # DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', 'ms4-fitness-app.herokuapp.com']
 
 
 # Application definition
