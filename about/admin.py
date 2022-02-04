@@ -4,8 +4,8 @@ from .models import Testimonials
 # Register your models here.
 class TestimonialAdmin(admin.ModelAdmin):
     list_display = (
-        'name',
-        'testimony',
+        "name",
+        "testimony",
     )
 
 

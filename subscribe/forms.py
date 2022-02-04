@@ -1,10 +1,10 @@
 from django import forms
-from .models import Order
+from .models import Subscribers
 
 
-class OrderForm(forms.ModelForm):
+class SubscribeForm(forms.ModelForm):
     """
-    Order Form
+    Subscribe form
     """
 
     class Meta:
@@ -12,22 +12,16 @@ class OrderForm(forms.ModelForm):
         Meta
         """
 
-        model = Order
-        fields = (
-            "full_name",
-            "email",
-            "phone_number",
-        )
+        model = Subscribers
+        fields = ("email",)
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
+
         placeholders = {
-            "full_name": "Full Name",
             "email": "Email Address",
-            "phone_number": "Phone Number",
         }
 
-        self.fields["full_name"].widget.attrs["autofocus"] = True
         for field in self.fields:
             if self.fields[field].required:
                 placeholder = f"{placeholders[field]} *"
