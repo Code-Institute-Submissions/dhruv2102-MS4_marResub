@@ -243,6 +243,10 @@ input[name='q']::placeholder {
 
 }
 
+.testimonial-para {
+    font-size: 20px;
+}
+
 /* Media Queries */
 
 /* Slightly larger container on xl screens */
