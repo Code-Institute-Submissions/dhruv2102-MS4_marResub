@@ -21,24 +21,31 @@
 #### Lighthouse
 
 - Home Page
+    
     ![Home Page](readme-images/lighthouse/home-page.png)
 
 - About
+    
     ![About](readme-images/lighthouse/About.png)
 
 - Products page
+    
     ![Products page](readme-images/lighthouse/train.png)
 
 - Login Page
+    
     ![Login Page](readme-images/lighthouse/login.png)
 
 - Register Page
+    
     ![Register Page](readme-images/lighthouse/register.png)
 
 - Subscribe Page
+    
     ![Home Page](readme-images/lighthouse/subscribe.png)
 
 - Adding product
+    
     ![Add product](readme-images/lighthouse/add_product.png)
 
 ## Testing User Stories
