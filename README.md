@@ -1,6 +1,9 @@
 # Fitness App
 
-![Site Mockup](#)
+![Site Mockup](readme-images/mockup.png)
+
+[Github Repo](https://github.com/dhruv2102/MS4)
+[Live Site](https://ms4-fitness-app.herokuapp.com/)
 
 ## About
 
