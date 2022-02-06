@@ -57,9 +57,10 @@
 #### Site User
 - As a site user I can easiy register for an account
 - As a site user I can log in and log out
-- As a site user I cna easily register for the news letter
+- As a site user I can easily register for the newsletter
 - A site user cam easily have a personlised user profile with my order history
-
+- As a site user, I can get emails after registering
+- As a site user, I can recover password if forgotten
 
 #### Store Owner
 - As store owner you can easily add products
