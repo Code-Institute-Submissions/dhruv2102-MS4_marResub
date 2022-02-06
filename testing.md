@@ -1,6 +1,8 @@
 ## Tests from Validators
 
-#### HTML Validation
+#### [HTML Validation](https://validator.w3.org/nu/#textarea)
+
+- There are a few errors in HTML validation because of use of django
 
 #### CSS Validation
 
