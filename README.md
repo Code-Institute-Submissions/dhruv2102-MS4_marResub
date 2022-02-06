@@ -207,6 +207,6 @@ If you wish to clone or download this repository to your local device you can fo
 
 Most of the code has been taken from Code Institute's Boutique Ado project walkthrough and adapted to requirements of this project
 
-The images have been taken from freepik, Buitwithscience website
+The images have been taken from freepik, [Buitwithscience](https://builtwithscience.com/) website
 
-The content has been taken from Builtwithscienceß
+The content has been taken from [Buitwithscience](https://builtwithscience.com/)
