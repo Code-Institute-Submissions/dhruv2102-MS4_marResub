@@ -26,12 +26,12 @@ class StripeHandler:
         """
         cust_email = order.email
         subject = render_to_string(
-            "checkout/confirmation_emails/confirmation_email_subject.txt",
-            {"order": order}
+            "Test",
+            {"order": order},
         )
 
         body = render_to_string(
-            "checkout/confirmation_emails/confirmation_email_body.txt",
+            "Test",
             {"order": order, "contact_email": settings.DEFAULT_FROM_EMAIL},
         )
 
