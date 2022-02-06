@@ -50,7 +50,36 @@ The project is made to sell fitness classes and nutrition which can be use din a
 ![Database architecture here](#)
 
 ### Wireframes
-![Wireframes](#)
+
+#### About
+![About Page](readme-images/wireframes/About.png)
+
+#### Bag 
+![Bag Page](readme-images/wireframes/Bag.png)
+
+#### Checkout Page
+![Checout Page](readme-images/wireframes/Checkout.png)
+
+#### Home Page
+![Home Page](readme-images/wireframes/Home.png)
+
+#### Login Page
+![Login Page](readme-images/wireframes/Login.png)
+
+#### Product Detail Page
+![Product Detail Page](readme-images/wireframes/product-detail.png)
+
+#### All products
+![All products Page](readme-images/wireframes/Products.png)
+
+#### Profile Page
+![Profile Page](readme-images/wireframes/Profile.png)
+
+#### Register Page
+![Register Page](readme-images/wireframes/Register.png)
+
+#### Subscribe Page
+![Subscribe Page](readme-images/wireframes/Subscribe.png)
 
 
 ## Features
@@ -84,6 +113,7 @@ The project is made to sell fitness classes and nutrition which can be use din a
 - [Django](https://docs.djangoproject.com/en/3.2/)
 - [Stripe](https://stripe.com/)
 - [AWS](http://aws.amazon.com/)
+- [Balsamiq](https://balsamiq.com/wireframes/desktop/)
 - [Heroku Postgres](https://www.postgresql.org/)
 
 

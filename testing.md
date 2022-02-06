@@ -9,7 +9,10 @@
 - CSS Validation passed with no errors
 - [results_css](readme-images/css.png)
 
-#### Javascript Validation
+#### [Javascript Validation](https://jshint.com/)
+
+- No errors but a few warnings
+
 
 #### Python Validation
 
