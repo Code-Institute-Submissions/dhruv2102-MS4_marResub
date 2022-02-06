@@ -7,7 +7,9 @@ from profiles.models import UserProfile
 
 
 class Order(models.Model):
-
+    """
+    Order class
+    """
     order_number = models.CharField(max_length=32, null=False, editable=False)
     full_name = models.CharField(max_length=50, null=False, blank=False)
     email = models.EmailField(max_length=254, null=False, blank=False)
@@ -20,7 +22,8 @@ class Order(models.Model):
         max_digits=10, decimal_places=2, null=False, default=0
     )
     original_bag = models.TextField(null=False, blank=False, default="")
-    stripe_pid = models.CharField(max_length=254, null=False, blank=False, default="")
+    stripe_pid = models.CharField(
+        max_length=254, null=False, blank=False, default="")
     user_profile = models.ForeignKey(
         UserProfile,
         on_delete=models.SET_NULL,
@@ -35,7 +38,8 @@ class Order(models.Model):
     def update_total(self):
 
         self.order_total = (
-            self.lineitems.aggregate(Sum("lineitem_total"))["lineitem_total__sum"] or 0
+            self.lineitems.aggregate(
+                Sum("lineitem_total"))["lineitem_total__sum"] or 0
         )
         self.grand_total = self.order_total
         self.save()
