@@ -112,7 +112,7 @@ class StripeWH_Handler:
                     order.delete()
                 return HttpResponse(
                     content=f'Webhook received: {event["type"]} | ERROR: {e}',
-                    status=500,
+                    status=501,
                 )
         self._send_confirmation_email(order)
 
