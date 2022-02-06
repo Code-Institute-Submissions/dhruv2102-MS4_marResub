@@ -3,6 +3,7 @@
 ![Site Mockup](readme-images/mockup.png)
 
 [Github Repo](https://github.com/dhruv2102/MS4)
+
 [Live Site](https://ms4-fitness-app.herokuapp.com/)
 
 ## About
@@ -49,10 +50,10 @@ The project is made to sell fitness classes and nutrition which can be use din a
     2. Edit a product
     3. Delete a product
 
-### Database Architecture
-![Database architecture here](#)
+## Database Architecture
+![Database architecture here](readme-images/database-model.png)
 
-### Wireframes
+## Wireframes
 
 #### About
 ![About Page](readme-images/wireframes/About.png)
