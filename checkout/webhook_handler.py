@@ -11,10 +11,12 @@ from profiles.models import UserProfile
 
 from .models import Order, OrderLineItem
 
+
 class StripeWH_Handler:
     """
     Handle Webhooks
     """
+
     def __init__(self, request):
         self.request = request
 
