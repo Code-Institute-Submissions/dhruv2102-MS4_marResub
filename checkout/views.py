@@ -1,4 +1,5 @@
-from django.shortcuts import render, redirect, reverse, get_object_or_404, HttpResponse
+from django.shortcuts import (
+    render, redirect, reverse, get_object_or_404, HttpResponse)
 from django.views.decorators.http import require_POST
 from django.contrib import messages
 from django.conf import settings
@@ -88,7 +89,8 @@ def checkout(request):
                     return redirect(reverse("view_bag"))
 
             request.session["save_info"] = "save-info" in request.POST
-            return redirect(reverse("checkout_success", args=[order.order_number]))
+            return redirect(
+                reverse("checkout_success", args=[order.order_number]))
         else:
             messages.error(
                 request,
@@ -98,7 +100,8 @@ def checkout(request):
     else:
         bag = request.session.get("bag", {})
         if not bag:
-            messages.error(request, "There's nothing in your bag at the moment")
+            messages.error(request, 
+            "There's nothing in your bag at the moment")
             return redirect(reverse("products"))
 
         current_bag = bag_contents(request)

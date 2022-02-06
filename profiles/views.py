@@ -5,9 +5,13 @@ from django.contrib import messages
 from checkout.models import Order
 from django.contrib.auth.decorators import login_required
 
+
 # Create your views here.
 @login_required
 def profile(request):
+    """
+    View to get user profile
+    """
     profile = get_object_or_404(UserProfile, user=request.user)
 
     if request == "POST":
@@ -33,6 +37,9 @@ def profile(request):
 
 
 def order_history(request, order_number):
+    """
+    View to get order history
+    """
     order = get_object_or_404(Order, order_number=order_number)
 
     messages.info(
