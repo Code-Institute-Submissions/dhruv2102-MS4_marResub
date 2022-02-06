@@ -68,6 +68,9 @@ def product_detail(request, product_id):
 
 @login_required
 def add_product(request):
+    """
+    A view to add product
+    """
     if not request.user.is_superuser:
         messages.error(request, "Only super users can do that")
         return redirect(reverse("home"))
@@ -91,6 +94,9 @@ def add_product(request):
 
 @login_required
 def edit_product(request, product_id):
+    """
+    A view to edit product
+    """
     if not request.user.is_superuser:
         messages.error(request, "Only super users can do that")
         return redirect(reverse("home"))
@@ -119,6 +125,7 @@ def edit_product(request, product_id):
 
 @login_required
 def delete_product(request, product_id):
+    """A view to delete product"""
     if not request.user.is_superuser:
         messages.error(request, "Only super users can do that")
         return redirect(reverse("home"))

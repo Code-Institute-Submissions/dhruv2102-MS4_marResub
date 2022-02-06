@@ -8,7 +8,7 @@ from profiles.models import UserProfile
 
 class Order(models.Model):
     """
-    Order class
+    Order Model
     """
     order_number = models.CharField(max_length=32, null=False, editable=False)
     full_name = models.CharField(max_length=50, null=False, blank=False)
@@ -36,7 +36,9 @@ class Order(models.Model):
         return uuid.uuid4().hex.upper()
 
     def update_total(self):
-
+        """
+        Function to update total
+        """
         self.order_total = (
             self.lineitems.aggregate(
                 Sum("lineitem_total"))["lineitem_total__sum"] or 0
@@ -54,6 +56,9 @@ class Order(models.Model):
 
 
 class OrderLineItem(models.Model):
+    """
+    Line order model
+    """
     order = models.ForeignKey(
         Order,
         null=False,

@@ -12,7 +12,7 @@ from profiles.models import UserProfile
 from .models import Order, OrderLineItem
 
 
-class StripeWH_Handler:
+class Stripe:
     """
     Handle Webhooks
     """
