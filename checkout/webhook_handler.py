@@ -12,7 +12,7 @@ from profiles.models import UserProfile
 from .models import Order, OrderLineItem
 
 
-class StripeWH_Handler:
+class StripeHandler:
     """
     Handle Webhooks
     """
@@ -27,7 +27,7 @@ class StripeWH_Handler:
         cust_email = order.email
         subject = render_to_string(
             "checkout/confirmation_email/confirmation_email_subject.txt",
-            {"order": order},
+            {"order": order}
         )
 
         body = render_to_string(
@@ -39,7 +39,7 @@ class StripeWH_Handler:
 
     def handle_event(self, event):
         """
-        Handle Webhook
+        Handle Generic Webhook
         """
         return HttpResponse(content=f'Webhoo received: {event["type"]}',
                             status=200)
@@ -61,7 +61,7 @@ class StripeWH_Handler:
         if username != "AnonymousUser":
             profile = UserProfile.objects.get(user__username=username)
             if save_info:
-                profile.default_phone_number = billing_details.phone_number
+                profile.default_phone_number = billing_details.phone
                 profile.save()
 
         order_exists = False
