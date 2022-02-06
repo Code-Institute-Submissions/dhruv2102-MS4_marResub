@@ -14,6 +14,7 @@ from bag.context import bag_contents
 import stripe
 import json
 
+
 # Create your views here.
 @require_POST
 def cache_checkout_data(request):
@@ -81,7 +82,8 @@ def checkout(request):
                     messages.error(
                         request,
                         (
-                            "One of the products in your bag wasn't found in our database. "
+                            "One of the products in your bag wasn't found in \
+                                 our database. "
                             "Please call us for assistance!"
                         ),
                     )
@@ -100,8 +102,8 @@ def checkout(request):
     else:
         bag = request.session.get("bag", {})
         if not bag:
-            messages.error(request, 
-            "There's nothing in your bag at the moment")
+            messages.error(
+                request, "There's nothing in your bag at the moment")
             return redirect(reverse("products"))
 
         current_bag = bag_contents(request)

@@ -7,14 +7,16 @@
 #### [CSS Validation](https://jigsaw.w3.org/css-validator/validator)
 
 - CSS Validation passed with no errors
-- [results_css](readme-images/css.png)
+- ![results_css](readme-images/css.png)
 
 #### [Javascript Validation](https://jshint.com/)
 
 - No errors but a few warnings
 
 
-#### Python Validation
+#### [Python Validation](http://pep8online.com/)
+
+- A few warnings from auto generated files
 
 #### Lighthouse
 

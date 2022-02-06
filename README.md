@@ -19,7 +19,8 @@ The project is made to sell fitness classes and nutrition which can be use din a
 3. [Technologies Used](#technologies-used)
 4. [Testing](#testing)
 5. [Deployment](#deployment)
-6. [Credits](#credits)
+6. [Known Bugs](#known-bugs)
+7. [Credits](#credits)
 
 ## User Experience
 
@@ -202,6 +203,10 @@ If you wish to clone or download this repository to your local device you can fo
 5. Open your Terminal and go to a directory where you want the cloned directory to be copied in.
 6. Type `Git Clone` and paste the URL you copied from the GitHub.
 7. To create your local clone press `Enter`
+
+## Known Bugs
+
+- When filling out checkout form, mandatory field icon doesn't disapper
 
 ## Credits
 
