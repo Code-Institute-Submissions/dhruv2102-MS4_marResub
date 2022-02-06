@@ -1,20 +1,27 @@
-from django.http import HttpResponse
-from .models import Order, OrderLineItem
-from products.models import Product
-from profiles.models import UserProfile
-from django.core.mail import send_mail
-from django.template.loader import render_to_string
-from django.conf import settings
-
 import json
 import time
 
+from django.conf import settings
+from django.core.mail import send_mail
+from django.template.loader import render_to_string
+
+from django.http import HttpResponse
+from products.models import Product
+from profiles.models import UserProfile
+
+from .models import Order, OrderLineItem
 
 class StripeWH_Handler:
+    """
+    Handle Webhooks
+    """
     def __init__(self, request):
         self.request = request
 
-    def _send_confirmation_email(self_order):
+    def _send_confirmation_email(self, order):
+        """
+        Send confirmation emails
+        """
         cust_email = order.email
         subject = render_to_string(
             "checkout/confirmation_email/confirmation_email_subject.txt",
@@ -29,9 +36,15 @@ class StripeWH_Handler:
         send_mail(subject, body, settings.DEFAULT_FROM_EMAIL, [cust_email])
 
     def handle_event(self, event):
+        """
+        Handle Webhook
+        """
         return HttpResponse(content=f'Webhoo received: {event["type"]}', status=200)
 
     def handle_payment_intent_succeeded(self, event):
+        """
+        Handle payement intentß
+        """
         intent = event.data.object
         pid = intent.id
         bag = intent.metadata.bag
@@ -102,4 +115,7 @@ class StripeWH_Handler:
         return HttpResponse(content=f'Webhook received: {event["type"]}', status=200)
 
     def handle_payment_intent_failed(self, event):
+        """
+        Payment failed
+        """
         return HttpResponse(content=f'Webhook received: {event["type"]}', status=200)
