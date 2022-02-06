@@ -58,7 +58,7 @@
 - As a site user I can easiy register for an account
 - As a site user I can log in and log out
 - As a site user I cna easily register for the news letter
-- I can easily have a personlised user profile with my order history
+- A site user cam easily have a personlised user profile with my order history
 
 
 #### Store Owner
