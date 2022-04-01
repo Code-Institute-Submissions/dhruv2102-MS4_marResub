@@ -82,3 +82,19 @@ def edit_testimonial(request, testimonial_id):
         "testimonial": testimonial,
     }
     return render(request, template, context)
+
+
+@login_required
+def delete_testimonial(request, testimonial_id):
+    """
+    View to delete Testimonial
+    """
+    if not request.user.is_superuser:
+        messages.error(request, "Only super users can do that")
+        return redirect(reverse("home"))
+
+    testimonial = get_object_or_404(Testimonials, pk=testimonial_id)
+    testimonial.delete()
+    messages.success(request, "Testimonial deleted!")
+    return redirect(reverse("about"))
+
