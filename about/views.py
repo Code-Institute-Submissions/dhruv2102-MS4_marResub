@@ -50,3 +50,35 @@ def add_testimonial(request):
         "form": form,
     }
     return render(request, template, context)
+
+
+@login_required
+def edit_testimonial(request, testimonial_id):
+    """
+    View to edit Testimonial
+    """
+    if not request.user.is_superuser:
+        messages.error(request, "Only super users can do that")
+        return redirect(reverse("home"))
+    
+    testimonial = get_object_or_404(Testimonials, pk=testimonial_id)
+    if request.method == "POST":
+        form = TestimonialsForms(request.POST, instance=testimonial)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "Successfull added testimonial!")
+            return redirect(reverse('about'))
+        else:
+            messages.error(
+                request, "Failed to add testimonial. \
+                    Please ensure for is valid")
+
+    form = TestimonialsForms(instance=testimonial)
+    messages.info(request, f"You are editing the testimonial by {testimonial}")
+
+    template = "about/edit_testimonial.html"
+    context = {
+        "form": form,
+        "testimonial": testimonial,
+    }
+    return render(request, template, context)
