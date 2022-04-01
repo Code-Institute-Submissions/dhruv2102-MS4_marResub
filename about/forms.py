@@ -7,9 +7,12 @@ class TestimonialsForms(forms.ModelForm):
     Form for testimonials
     """
     class Meta:
+        """
+        meta
+        """
         model = Testimonials
         fields = "__all__"
-    
+
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
