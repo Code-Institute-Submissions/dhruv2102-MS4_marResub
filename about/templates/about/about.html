@@ -45,6 +45,13 @@
                         <div class="mySlides pt-3">
                             <q class="testimonial-para">{{ testimonial.testimony }}</q>
                             <p class="testimonial-para">- {{ testimonial.name }}</p>
+                            
+                            {% if request.user.is_superuser %}
+                                <small class="ml-3">
+                                    <a href="{% url 'edit_testimonial' testimonial.id%}">Edit</a> | 
+                                    <a href="{% url 'delete_testimonial' testimonial.id%}" class="text-danger">Delete</a>
+                                </small>
+                            {% endif %}
                         </div>
                     {% endfor %}
                     <!-- Next/prev buttons -->
