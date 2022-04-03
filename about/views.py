@@ -66,7 +66,7 @@ def edit_testimonial(request, testimonial_id):
         form = TestimonialsForms(request.POST, instance=testimonial)
         if form.is_valid():
             form.save()
-            messages.success(request, "Successfull added testimonial!")
+            messages.success(request, "Successfull edited testimonial!")
             return redirect(reverse('about'))
         else:
             messages.error(
