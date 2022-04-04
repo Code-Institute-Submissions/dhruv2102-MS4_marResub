@@ -33,7 +33,7 @@ def add_testimonial(request):
     if not request.user.is_superuser:
         messages.error(request, "Only super users can do that")
         return redirect(reverse("home"))
-    
+
     if request.method == "POST":
         form = TestimonialsForms(request.POST)
         if form.is_valid():
@@ -42,7 +42,8 @@ def add_testimonial(request):
             return redirect(reverse('about'))
         else:
             messages.error(
-                request, "Failed to add testimonial. Please ensure for is valid")
+                request, "Failed to add testimonial. \
+                    Please ensure for is valid")
 
     form = TestimonialsForms()
     template = "about/add_testimonial.html"
@@ -60,7 +61,7 @@ def edit_testimonial(request, testimonial_id):
     if not request.user.is_superuser:
         messages.error(request, "Only super users can do that")
         return redirect(reverse("home"))
-    
+
     testimonial = get_object_or_404(Testimonials, pk=testimonial_id)
     if request.method == "POST":
         form = TestimonialsForms(request.POST, instance=testimonial)
@@ -97,4 +98,3 @@ def delete_testimonial(request, testimonial_id):
     testimonial.delete()
     messages.success(request, "Testimonial deleted!")
     return redirect(reverse("about"))
-

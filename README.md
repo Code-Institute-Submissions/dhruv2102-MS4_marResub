@@ -214,6 +214,7 @@ If you wish to clone or download this repository to your local device you can fo
 - Fixed the Internal Server Error for Edit Product Funtionality
 - Added Testimonial Management
    - Added CRUD functionality for managing testimonials for the admin
+   
 
 ## Credits
 
